@@ -3,7 +3,18 @@ CAPI=2:
 name: "bci:tooling:rtlgen"
 description: "Generate RTL for CSR and IRQ."
 
+filesets:
+  python_files:
+    files:
+      - rtlgen.py
+    file_type: pythonScript
+
 generators:
   rtlgen:
     interpreter: python3
     command: rtlgen.py
+
+targets:
+  default:
+    filesets:
+      - python_files
